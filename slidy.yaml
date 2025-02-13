@@ -1,0 +1,117 @@
+# More info about this file: https://pub.dev/packages/slidy
+
+slidy: "1"
+
+scripts:
+  # (slidy run list)
+  list:
+    name: "List available scripts"
+    run: echo Available scripts:\nanalyze, format, sort-imports, fix-check, fix-apply, gen-l10n, gen-json, gen-icons, gen-firebase-options, pre-commit, cleanup, build
+
+  # (slidy run analyze)
+  analyze:
+    name: "Analyze"
+    description: "Running: flutter analyze"
+    run: flutter analyze
+
+  # (slidy run format)
+  format:
+    name: "Format"
+    description: "Running: dart format ./lib --line-length=100"
+    run: dart format ./lib --line-length=100
+
+  # (slidy run sort-imports)
+  sort-imports:
+    name: "Sort Imports"
+    description: "Running: flutter pub run import_sorter:main"
+    run: flutter pub run import_sorter:main
+
+  # (slidy run fix-check)
+  fix-check:
+    name: "Fix Check"
+    description: "Running: dart fix --dry-run"
+    run: dart fix --dry-run
+
+  # (slidy run fix-apply)
+  fix-apply:
+    name: "Fix Apply"
+    description: "Running: dart fix --apply"
+    run: dart fix --apply
+
+  # (slidy run gen-l10n)
+  gen-l10n:
+    name: "Generate Localization Files"
+    description: "Running: flutter gen-l10n"
+    run: flutter gen-l10n
+
+  # (slidy run gen-json)
+  gen-json:
+    name: "Generate JSON Serializable Files"
+    description: "Running: dart run build_runner build --delete-conflicting-outputs"
+    run: dart run build_runner build --delete-conflicting-outputs
+
+  # (slidy run gen-icons)
+  gen-icons:
+    name: "Generate Launcher Icons"
+    description: "Running: flutter pub run flutter_launcher_icons"
+    run: flutter pub run flutter_launcher_icons
+
+  # (slidy run gen-firebase-options)
+  gen-firebase-options:
+    name: "Generate Firebase Options"
+    description: "Running: flutterfire configure"
+    run: flutterfire configure
+
+  # (slidy run pre-commit)
+  pre-commit:
+    name: "Pre-Commit"
+    description: "Sort imports, format and fix-check"
+    steps:
+      - run: slidy run sort-imports
+      - run: slidy run format
+      - run: slidy run fix-check
+
+  # (slidy run cleanup)
+  cleanup:
+    name: "Cleanup"
+    description: "Cleanup and reinstall dependencies"
+    steps:
+      - name: "Clean"
+        description: "Running: flutter clean"
+        run: flutter clean
+
+      - name: "Get Packages"
+        description: "Running: flutter pub get"
+        run: flutter pub get
+
+      - name: "Pod Clean and Reinstall"
+        description: "Running: rm Podfile.lock && pod deintegrate && pod update && pod install"
+        shell: bash # default: command. options (command|bash|sh|zsh|pwsh)
+        condition: "${System.operatingSystem} == macos"
+        working-directory: ios
+        run: |-
+          rm Podfile.lock
+          pod deintegrate
+          pod update
+          pod install
+
+      - run: echo Cleanup Finished
+
+  # (slidy run build)
+  build:
+    name: "Build"
+    description: "Build Android and iOS apps."
+    steps:
+      - name: "Build Android .aab"
+        description: "Running: flutter build appbundle"
+        run: flutter build appbundle
+
+      - name: "Build iOS"
+        description: "Running: flutter build ios"
+        run: flutter build ios
+
+      - name: "Build iOS .ipa"
+        description: "Running: flutter build ipa --obfuscate --split-debug-info"
+        run: flutter build ipa --obfuscate --split-debug-info
+
+      - run: echo Android and iOS Builds Finished

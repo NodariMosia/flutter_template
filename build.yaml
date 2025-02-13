@@ -1,0 +1,9 @@
+# which files should `flutter pub build_runner build` use.
+targets:
+  $default:
+    builders:
+      json_serializable:
+        enabled: true
+        generate_for:
+          include:
+            - lib/src/models/**.dart

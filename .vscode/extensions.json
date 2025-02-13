@@ -1,0 +1,18 @@
+{
+  "recommendations": [
+    // Dart/Flutter specific extentions:
+    "Dart-Code.dart-code", // Dart language suppport.
+    "Dart-Code.flutter", // Flutter support.
+    "aksharpatel47.vscode-flutter-helper", // Helper for JSONSerializable annotated classes.
+    "Google.arb-editor", // Helper for editing .arb files (used for localizations).
+    "jeroen-meijer.pubspec-assist", // Helper for adding/updating dependencies in pubspec.yaml.
+
+    // General helper extensions:
+    "streetsidesoftware.code-spell-checker", // Spelling checker for source code.
+    "kisstkondoros.vscode-gutter-preview", // Shows image preview in the gutter and on hover.
+    "esbenp.prettier-vscode", // Code formatter for non-dart code files.
+    "mariomatheu.syntax-project-pbxproj", // Syntax highlight support for project.pbxproj files.
+    "redhat.vscode-xml", // XML language support.
+    "redhat.vscode-yaml" // YAML language support.
+  ]
+}

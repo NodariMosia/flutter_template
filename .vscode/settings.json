@@ -1,0 +1,45 @@
+{
+  "editor.formatOnSave": true,
+  "editor.rulers": [80, 100],
+  "editor.tabSize": 2,
+
+  "dart.lineLength": 100,
+  "[dart]": {
+    "editor.defaultFormatter": "Dart-Code.dart-code",
+    "editor.detectIndentation": false,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.insertSpaces": true,
+    "editor.rulers": [100],
+    "editor.suggest.insertMode": "replace",
+    // "editor.selectionHighlight": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.tabSize": 2,
+    "editor.wordBasedSuggestions": "off"
+  },
+
+  "arb-editor.suppressedWarnings": ["missing_metadata_for_key"],
+
+  "[gradle][gradle-build][gradlew]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4
+  },
+
+  "[json][jsonc][yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.insertSpaces": true,
+    "prettier.printWidth": 80,
+    "prettier.tabWidth": 2
+  },
+
+  "[xml]": {
+    "editor.defaultFormatter": "redhat.vscode-xml",
+    "editor.insertSpaces": true
+  },
+
+  "redhat.telemetry.enabled": false,
+
+  "cSpell.language": "en,lorem,en-US,en-GB"
+}

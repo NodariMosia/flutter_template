@@ -1,0 +1,57 @@
+# Additional information about this file can be found at
+# https://dart.dev/guides/language/analysis-options
+
+include: package:flutter_lints/flutter.yaml
+
+formatter:
+  # Set project-wide line-length option for dart formatter.
+  # This will be enabled after Dart SDK 3.7 gets added to stable release.
+  # Until then, we use `dart format ./lib --line-length=100` to format with custom line length.
+  # https://github.com/dart-lang/sdk/blob/main/CHANGELOG.md#dart-format
+  page_width: 100
+
+linter:
+  # List of all available lint rules is published at
+  # https://dart.dev/tools/linter-rules
+  rules:
+    - always_declare_return_types
+    - always_put_required_named_parameters_first
+    - always_use_package_imports
+    - avoid_bool_literals_in_conditional_expressions
+    - avoid_function_literals_in_foreach_calls
+    - avoid_futureor_void
+    - avoid_print
+    - constant_identifier_names
+    - document_ignores
+    - prefer_constructors_over_static_methods
+    - prefer_final_locals
+    - prefer_null_aware_method_calls
+    - prefer_single_quotes
+    - prefer_const_constructors
+    - prefer_const_constructors_in_immutables
+    - prefer_const_declarations
+    - prefer_const_literals_to_create_immutables
+    - prefer_final_in_for_each
+    - require_trailing_commas
+    - sort_child_properties_last
+    - sort_pub_dependencies
+    - sort_unnamed_constructors_first
+    - unintended_html_in_doc_comment
+    - unnecessary_await_in_return
+    - unnecessary_lambdas
+    - unnecessary_late
+    - unnecessary_parenthesis
+    - use_enums
+    - use_if_null_to_convert_nulls_to_bools
+    - use_is_even_rather_than_modulo
+    - use_named_constants
+    - use_string_buffers
+
+analyzer:
+  exclude:
+    - build/**
+    - "**.freezed.dart"
+    - "**.g.dart"
+    - "**.gr.dart"
+    - "**/generated_plugin_registrant.dart"
+    - "**/generated/**/*.dart"

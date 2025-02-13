@@ -1,0 +1,14 @@
+# Docs for configuring l10n.yaml file:
+# https://docs.flutter.dev/ui/accessibility-and-internationalization/internationalization#configuring-the-l10n-yaml-file
+
+arb-dir: lib/l10n # default: lib/l10n
+template-arb-file: app_en.arb # default: app_en.arb
+
+synthetic-package: false # default: true (generates package:flutter_gen)
+output-dir: lib/src/generated/l10n # default: null (generates package:flutter_gen)
+output-localization-file: app_l10n.dart # default: app_localizations.dart
+output-class: AppL10n # default: AppLocalizations
+
+preferred-supported-locales: [en, ka] # default: generated in alphabetical order
+
+untranslated-messages-file: untranslatedMessages.txt
